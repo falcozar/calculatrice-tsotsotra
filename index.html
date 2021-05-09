@@ -4,66 +4,67 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-   
-      <script> 
-         //evaluer les chiffres en entrée et en sortie
-         function calculer() 
-         { 
-             let nbre_in = document.getElementById("output").value; 
-             let  nbre_out = eval(nbre_in); 
-             document.getElementById("output").value = nbre_out ;
-         } 
-         //fonction qui affiche la valeur
-         function afficher(val) 
-         { 
-             document.getElementById("output").value+=val ;
-         } 
-         //fonction qui efface l'écran 
-         function effacer() 
-         { 
-             document.getElementById("output").value = "" ;
-         } 
-      </script>
+    <script defer src="js/app.js"></script>
       <style>
         td button{width:95%}
+     
+      html, body {
+         
+         background-color: #17a2b8;
+       }
+       textarea:focus {
+         outline: none;
+       }
+       .btn.active.focus,
+       .btn.active:focus,
+       .btn.focus,
+       .btn.focus:active,
+       .btn:active:focus,
+       .btn:focus {
+         outline: 0;
+         outline-offset: 0;
+         background-image: none;
+         -webkit-box-shadow: none;
+         box-shadow: none;
+       }
       </style>
    </head> 
    <body> 
     <div class="container-fluid">
       <table class="table table-dark" style="width:100%" > 
          <tr> 
-            <td colspan="4"><input id="sortie" class="form-control" /></td> 
+            <td colspan="4"><div id="sortie" style="width:60%;height:150px;background-color:#fff;color:#251414;font-weight:bold"></div></td> 
          </tr> 
          <tr> 
             <td colspan="3"><input id="output"/></td> 
-            <td><button class="btn btn-sm btn-danger" onclick="effacer()">C</button></td> 
+            <td><button id="clear" class="btn btn-sm btn-danger">C</button></td> 
          </tr>
          <tr> 
-            <td><button class="btn btn-sm btn-warning" onclick="afficher('1')">1</button></td> 
-            <td><button class="btn btn-sm btn-warning" onclick="afficher('2')">2</button></td> 
-            <td><button class="btn btn-sm btn-warning" onclick="afficher('3')">3</button></td> 
-            <td><button class="btn btn-sm btn-primary" onclick="afficher('+')">+</button></td> 
+            <td><button class="btn btn-sm btn-warning chiffre" >1</button></td> 
+            <td><button class="btn btn-sm btn-warning chiffre" >2</button></td> 
+            <td><button class="btn btn-sm btn-warning chiffre">3</button></td> 
+            <td><button class="btn btn-sm btn-primary chiffre op" >+</button></td> 
          </tr> 
          <tr> 
-            <td><button class="btn btn-sm btn-warning" onclick="afficher('4')">4</button></td> 
-            <td><button class="btn btn-sm btn-warning" onclick="afficher('5')">5</button></td> 
-            <td><button class="btn btn-sm btn-warning" onclick="afficher('6')">6</button></td> 
-            <td><button class="btn btn-sm btn-primary" onclick="afficher('-')">-</button></td> 
+            <td><button class="btn btn-sm btn-warning chiffre" >4</button></td> 
+            <td><button class="btn btn-sm btn-warning chiffre" >5</button></td> 
+            <td><button class="btn btn-sm btn-warning chiffre">6</button></td> 
+            <td><button class="btn btn-sm btn-primary chiffre op" >-</button></td> 
          </tr> 
          <tr> 
-            <td><button class="btn btn-sm btn-warning" onclick="afficher('7')">7</button></td> 
-            <td><button class="btn btn-sm btn-warning" onclick="afficher('8')">8</button></td> 
-            <td><button class="btn btn-sm btn-warning" onclick="afficher('9')">9</button></td> 
-            <td><button class="btn btn-sm btn-primary" onclick="afficher('*')">*</button></td> 
+            <td><button class="btn btn-sm btn-warning chiffre" >7</button></td> 
+            <td><button class="btn btn-sm btn-warning chiffre" >8</button></td> 
+            <td><button class="btn btn-sm btn-warning chiffre" >9</button></td> 
+            <td><button class="btn btn-sm btn-primary chiffre op">*</button></td> 
          </tr> 
          <tr>
-            <td><button class="btn btn-sm btn-warning" onclick="afficher('.')">,</button></td> 
-            <td><button class="btn btn-sm btn-warning" onclick="afficher('0')">0</button></td> 
-            <td><button class="btn btn-sm btn-success" onclick="calculer()">=</button></td> 
-            <td><button class="btn btn-sm btn-primary" onclick="afficher('/')">/</button></td> 
+            <td><button class="btn btn-sm btn-warning chiffre" >.</button></td> 
+            <td><button class="btn btn-sm btn-warning chiffre">0</button></td> 
+            <td><button id="egal" class="btn btn-sm btn-success">=</button></td> 
+            <td><button class="btn btn-sm btn-primary chiffre">/</button></td> 
          </tr> 
       </table> 
    </div><!-- end container-->
-        <script src="./bootstrap/js/bootstrap.min.js"></script>
+       
     </body> 
 </html>
