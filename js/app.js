@@ -37,6 +37,11 @@ const calculer = () => {
     
 
     let op = eval(output.value)  //evaluer les chiffres en entrée et en sortie
+    if (op == "Infinity") 
+    { 
+        effacer()
+        return
+    }
     output.value = op
     //sortie_text.textContent = ""
     span.innerHTML = out + " = " + op + "<br>"
