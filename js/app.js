@@ -40,7 +40,7 @@ const calculer = () => {
     if (op == "Infinity") 
     { 
         effacer()
-        return
+        retur
     }
     output.value = op
     //sortie_text.textContent = ""
